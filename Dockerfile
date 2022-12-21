@@ -62,10 +62,10 @@ ENV APP_VERSION="3.3.1" \
     PYTHONPATH="/opt/bitnami/spark/python/:$PYTHONPATH" \
     SPARK_HOME="/opt/bitnami/spark" \
     PYSPARK_DRIVER_PYTHON=jupyterhub-singleuser \
-    PYSPARK_SUBMIT_ARGS="--packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.1,org.apache.spark:spark-avro_2.12:3.3.1 pyspark-shell" \
+    PYSPARK_SUBMIT_ARGS="--packages com.mysql:mysql-connector-j:8.0.31,org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.1,org.apache.spark:spark-avro_2.12:3.3.1 pyspark-shell" \
     PATH="/opt/bitnami/common/bin:/opt/bitnami/miniconda/bin:$PATH"
 
-RUN pip install pyspark pandas pyarrow numpy tensorflow elephas
+RUN pip install pyspark pandas pyarrow numpy elephas
 WORKDIR /opt/bitnami/jupyterhub-singleuser/
 USER 1001
 ENTRYPOINT [ "/opt/bitnami/scripts/spark/entrypoint.sh", "tini", "-g", "--" ]
