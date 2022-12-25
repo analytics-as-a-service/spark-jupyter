@@ -4,4 +4,4 @@ Image source for singleuser image in `bitnami/spark` and `jupyterhub/jupyter` he
 - To build the image make all the script files as executables and then run the following command
 ```
 docker build . -t <image-name>:<image-tag>
-```mkdir /data-nn /data-dn
+```
